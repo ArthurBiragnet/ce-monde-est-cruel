@@ -17,6 +17,29 @@ class TrandoshaPlayer extends Player
 
     public function getChoice()
     {
+        
+        $last_opp = $this->result->getLastChoiceFor($this->opponentSide);
+        if ($last_opp == 0) {
+            $result = parent::scissorsChoice();
+        }
+        else {
+            $result = parent::paperChoice();
+        } 
+        $all_opp = $this->result->getChoicesFor($this->opponentSide);
+        $rockNumber = array_search('rock', $all_opp);
+        $scissorsNumber = array_search('scissors', $all_opp);
+        $paperNumber = array_search('paper', $all_opp);
+
+        if ($rockNumber > $scissorsNumber && $rockNumber > $paperNumber) {
+            $result = parent::rockChoice();
+        }
+        elseif ($scissorsNumber > $rockNumber && $scissorsNumber > $paperNumber) {
+            $result = parent::scissorsChoice();
+        }
+        else {
+            $result = parent::paperChoice();
+        }
+
         // -------------------------------------    -----------------------------------------------------
         // How to get my Last Choice           ?    $this->result->getLastChoiceFor($this->mySide) -- if 0 (first round)
         // How to get the opponent Last Choice ?    $this->result->getLastChoiceFor($this->opponentSide) -- if 0 (first round)

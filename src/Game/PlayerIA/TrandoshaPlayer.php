@@ -67,7 +67,7 @@ class TrandoshaPlayer extends Player
         // -------------------------------------    -----------------------------------------------------
 
 
-        return parent::rockChoice();
+        return $result;
 
     }
 };

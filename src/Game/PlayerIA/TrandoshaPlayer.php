@@ -24,20 +24,22 @@ class TrandoshaPlayer extends Player
         }
         else {
             $result = parent::paperChoice();
-        } 
+        }
+
         $all_opp = $this->result->getChoicesFor($this->opponentSide);
+
         $rockNumber = array_search('rock', $all_opp);
         $scissorsNumber = array_search('scissors', $all_opp);
         $paperNumber = array_search('paper', $all_opp);
 
         if ($rockNumber > $scissorsNumber && $rockNumber > $paperNumber) {
-            $result = parent::rockChoice();
+            $result = parent::paperChoice();
         }
         elseif ($scissorsNumber > $rockNumber && $scissorsNumber > $paperNumber) {
-            $result = parent::scissorsChoice();
+            $result = parent::rockChoice();
         }
         else {
-            $result = parent::paperChoice();
+            $result = parent::scissorsChoice();
         }
 
         // -------------------------------------    -----------------------------------------------------

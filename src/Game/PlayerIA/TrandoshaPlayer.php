@@ -20,9 +20,6 @@ class TrandoshaPlayer extends Player
         
         $last_opp = $this->result->getLastChoiceFor($this->opponentSide);
         if ($last_opp == 0) {
-            $result = parent::scissorsChoice();
-        }
-        else {
             $result = parent::paperChoice();
         }
 

@@ -7,7 +7,8 @@ use Hackathon\Game\Result;
 /**
  * Class TrandoshaPlayers
  * @package Hackathon\PlayerIA
- * @author YOUR NAME HERE
+ * @author Arthur Biragnet
+ * Récuperer tous les coups de l'adversaire et joué pour gagner contre le signe le plus joué par mon adversaire.
  */
 class TrandoshaPlayer extends Player
 {
